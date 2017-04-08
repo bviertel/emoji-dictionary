@@ -23,6 +23,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dacooltableview.dataSource = self
         dacooltableview.delegate = self
     }
+    
+    // How many rows in Table View? The '-> Int' is the Return function!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 10
+        
+    }
+    
+    // What do you want inside of each row of Table View? Also, ROW = CELL! Note the Return!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell()
+        
+        // Every cell will have 'HELLO THERE' as label. Note the question mark
+        cell.textLabel?.text = "HELLO THERE"
+        
+        return cell
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
