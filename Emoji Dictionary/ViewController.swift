@@ -55,6 +55,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Something to allow switching between view controllers
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // Everything is under the tableView thing
+        
+        // Deselects item after selection, removes gray selection bar
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         // Sets temporary Emoji holder to whatever Emoji is in whatever 'row' is being selected
         let emoji = emojis[indexPath.row]
         
