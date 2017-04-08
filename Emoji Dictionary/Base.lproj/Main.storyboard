@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="RE4-QX-sXH">
             <objects>
-                <viewController id="hdf-DD-tST" sceneMemberID="viewController">
+                <viewController id="hdf-DD-tST" customClass="DefinitionViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alb-LE-Y1g"/>
                         <viewControllerLayoutGuide type="bottom" id="7YH-i6-bEK"/>
@@ -57,16 +57,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⛪️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-bS-aoa">
-                                <rect key="frame" x="78" y="323" width="218" height="21"/>
+                                <rect key="frame" x="78" y="94" width="218" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dfX-6Q-L0g"/>
+                                    <constraint firstAttribute="height" constant="200" id="dfX-6Q-L0g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Church" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xah-p4-cTz">
-                                <rect key="frame" x="126" y="444" width="123" height="21"/>
+                                <rect key="frame" x="126" y="344" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,12 +74,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xah-p4-cTz" firstAttribute="top" secondItem="ydI-bS-aoa" secondAttribute="bottom" constant="100" id="1ct-yz-4SZ"/>
+                            <constraint firstItem="xah-p4-cTz" firstAttribute="top" secondItem="ydI-bS-aoa" secondAttribute="bottom" constant="50" id="1ct-yz-4SZ"/>
+                            <constraint firstItem="ydI-bS-aoa" firstAttribute="centerX" secondItem="QPL-HJ-myf" secondAttribute="centerX" id="AX5-Qp-KdG"/>
                             <constraint firstItem="xah-p4-cTz" firstAttribute="centerX" secondItem="QPL-HJ-myf" secondAttribute="centerX" id="Emc-dY-PeF"/>
-                            <constraint firstItem="ydI-bS-aoa" firstAttribute="centerX" secondItem="QPL-HJ-myf" secondAttribute="centerX" id="Wmb-bQ-ceg"/>
-                            <constraint firstItem="ydI-bS-aoa" firstAttribute="centerY" secondItem="QPL-HJ-myf" secondAttribute="centerY" id="q8l-Wu-SBt"/>
+                            <constraint firstItem="ydI-bS-aoa" firstAttribute="top" secondItem="alb-LE-Y1g" secondAttribute="bottom" constant="30" id="PQO-rz-jFz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="ydI-bS-aoa" id="P4A-NV-Vcx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRz-MO-sJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
