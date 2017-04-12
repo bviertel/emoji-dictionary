@@ -21,7 +21,7 @@ class DefinitionViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     
     // Just to have a starting point. ALSO LINKED WITHIN THE MAIN VIEW CONTROLLER!
-    var emoji = "NO EMOJI"
+    var emoji : Emoji = Emoji()
 
     override func viewDidLoad() {
         
@@ -29,35 +29,14 @@ class DefinitionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        // Replaces the church with the Emoji sent from the other controller
-        emojiLabel.text = emoji
-        
-        if emoji == "😀" {
-            
-            definitionLabel.text = "This is a smiley person"
-            
-            categoryLabel.text = "Category: SMILEY"
-            
-            birthyearLabel.text = "Birthyear: 2010"
-            
-        } else if emoji == "😋" {
-            
-            definitionLabel.text = "This is a smiley person with it's tongue out"
-            
-            categoryLabel.text = "Category: DIFF SMILEY"
-            
-            birthyearLabel.text = "Birthyear: 2006"
+        // Replaces all data with related emoji data
+        emojiLabel.text = emoji.stringEmoji
+        // Don't forget to convery INT to STRING
+        birthyearLabel.text = "Birthyear: \(emoji.birthYear)"
+        categoryLabel.text = "Category: \(emoji.category)"
+        definitionLabel.text = "Definition: \(emoji.definition)"
 
-            
-        } else if emoji == "😎" {
-            
-            definitionLabel.text = "This is a smiley person with shades"
-            
-        } else {
-            
-            definitionLabel.text = "Not yet defined"
-            
-        }
+        
         
     }
 

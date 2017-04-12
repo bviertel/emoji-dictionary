@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var dacooltableview: UITableView!
     
     // Creating an Array to store everything in the table. Where ALL of the data is coming from.
-    var emojis = ["😀","😋","😎","👽","😈","✌🏼","👨‍👩‍👦‍👦","🐱"]
+    var emojis : [Emoji] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Where is the information coming from? (See note above ViewController)
         dacooltableview.dataSource = self
         dacooltableview.delegate = self
+        // Loads up on load
+        emojis = makeEmojiArray()
     }
     
     // How many rows in Table View? The '-> Int' is the Return function!
@@ -43,8 +45,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Setting var 'cell' to type of 'UITableViewCell()'
         let cell = UITableViewCell()
         
-        // Every cell will have 'HELLO THERE' as label. Note the question mark
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        
+        // Can change the last part to display whatever var of emoji
+        cell.textLabel?.text = emoji.stringEmoji
         
         // Returning cell; note the Return value in declaration
         return cell
@@ -74,13 +78,63 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let defVC = segue.destination as! DefinitionViewController
         
         // Changing the var 'emoji' under the Definition View Controller as whatever the 'sender' is.
-        defVC.emoji = sender as! String
+        defVC.emoji = sender as! Emoji
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Returning ARRAY of Emoji objects
+    func makeEmojiArray() -> [Emoji] {
+        
+        // To constant
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "😀"
+        emoji1.birthYear = 2010
+        emoji1.category = "Smiley"
+        emoji1.definition = "A smiley face"
+        
+        // To constant
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "😋"
+        emoji2.birthYear = 2007
+        emoji2.category = "Smiley X2"
+        emoji2.definition = "A smiley face with tongue out"
+        
+        // To constant
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "😎"
+        emoji3.birthYear = 2008
+        emoji3.category = "Smiley X1"
+        emoji3.definition = "A smiley face with sun glasses"
+        
+        // To constant
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "👽"
+        emoji4.birthYear = 2007
+        emoji4.category = "Alien"
+        emoji4.definition = "An alien"
+        
+        // To constant
+        let emoji5 = Emoji()
+        emoji5.stringEmoji = "😈"
+        emoji5.birthYear = 2012
+        emoji5.category = "Devils"
+        emoji5.definition = "A purple devil smiley"
+        
+        // To constant
+        let emoji6 = Emoji()
+        emoji6.stringEmoji = "✌🏼"
+        emoji6.birthYear = 2014
+        emoji6.category = "Hands"
+        emoji6.definition = "A peace sign"
+
+        return [emoji1,emoji2,emoji3,emoji4,emoji5,emoji6]
+        
+        
     }
 
 
