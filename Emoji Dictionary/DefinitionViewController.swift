@@ -16,10 +16,15 @@ class DefinitionViewController: UIViewController {
     
     @IBOutlet weak var definitionLabel: UILabel!
     
+    @IBOutlet weak var birthyearLabel: UILabel!
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    
     // Just to have a starting point. ALSO LINKED WITHIN THE MAIN VIEW CONTROLLER!
     var emoji = "NO EMOJI"
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -31,9 +36,18 @@ class DefinitionViewController: UIViewController {
             
             definitionLabel.text = "This is a smiley person"
             
+            categoryLabel.text = "Category: SMILEY"
+            
+            birthyearLabel.text = "Birthyear: 2010"
+            
         } else if emoji == "😋" {
             
             definitionLabel.text = "This is a smiley person with it's tongue out"
+            
+            categoryLabel.text = "Category: DIFF SMILEY"
+            
+            birthyearLabel.text = "Birthyear: 2006"
+
             
         } else if emoji == "😎" {
             
